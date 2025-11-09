@@ -1,0 +1,20 @@
+Metric,Value,Category
+Control Users,5063,Sample Size
+Treatment Users,5068,Sample Size
+Control Conversions,596,Conversions
+Treatment Conversions,777,Conversions
+Control Conversion Rate,0.1177,Rate
+Treatment Conversion Rate,0.1533,Rate
+Absolute Difference,0.0356,Difference
+Relative Improvement %,30.24,Performance
+Z Statistic,-5.2341,Statistical Test
+P Value,0.000000,Statistical Test
+Statistical Significant,Yes,Result
+Effect Size (Cohen h),0.1042,Effect
+Statistical Power,0.999,Power
+Prob Treatment Better,1.000,Bayesian
+Test Duration (Days),14,Duration
+Total Revenue Control,52878.47,Revenue
+Total Revenue Treatment,68759.75,Revenue
+Revenue Per User Control,10.44,Revenue
+Revenue Per User Treatment,13.57,Revenue
