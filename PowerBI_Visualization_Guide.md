@@ -1,10 +1,10 @@
-# 🎨 Power BI Dashboard Templates for AB Testing
+# Power BI Dashboard Templates for A/B Testing
 
-This guide provides specific templates for creating professional AB test dashboards using the exported data.
+Specific templates for creating professional A/B test dashboards using data exported from `ab_test_template.ipynb` (which supplements the main analysis in `ab_test_version_28_02_2026.ipynb`).
 
-## 📊 Dashboard Structure (4 Pages)
+## Dashboard Structure (4 Pages)
 
-### 🏠 Page 1: Executive Summary
+### Page 1: Executive Summary
 **Purpose:** High-level overview for stakeholders
 
 #### Key Visuals:
@@ -40,7 +40,7 @@ Conversion Rate Comparison Chart:
 
 ---
 
-### 📈 Page 2: Statistical Analysis
+### Page 2: Statistical Analysis
 **Purpose:** Detailed analysis for analysts
 
 #### Key Visuals:
@@ -83,7 +83,7 @@ SWITCH(
 
 ---
 
-### 📅 Page 3: Time Series Analysis
+### Page 3: Time Series Analysis
 **Purpose:** Performance trends over time
 
 #### Key Visuals:
@@ -118,7 +118,7 @@ Daily Trends Chart:
 
 ---
 
-### 👥 Page 4: Segment Analysis
+### Page 4: Segment Analysis
 **Purpose:** Performance by user segments
 
 #### Key Visuals:
@@ -154,7 +154,7 @@ RETURN
 DIVIDE(TreatmentRate - ControlRate, ControlRate, 0) * 100
 ```
 
-## 🎨 Design Guidelines
+## Design Guidelines
 
 ### Color Scheme:
 - **Control Group:** `#1f77b4` (Professional Blue)
@@ -175,7 +175,7 @@ DIVIDE(TreatmentRate - ControlRate, ControlRate, 0) * 100
 3. **White space:** Don't overcrowd visuals
 4. **Consistency:** Same chart types for same data
 
-## 📏 Specific Visual Settings
+## Specific Visual Settings
 
 ### KPI Cards:
 ```
@@ -215,7 +215,7 @@ Formatting:
 - Show totals where appropriate
 ```
 
-## 🔄 Interactive Features
+## Interactive Features
 
 ### Slicers to Add:
 1. **Date Range Slicer**
@@ -243,7 +243,7 @@ Drill-through fields: Date, Group
 Target: raw_user_sample table
 ```
 
-## 📱 Mobile Optimization
+## Mobile Optimization
 
 ### Mobile Layout (Portrait):
 1. **KPI Cards:** 2×2 grid
@@ -257,7 +257,7 @@ Target: raw_user_sample table
 - Simplified visuals
 - Essential metrics only
 
-## 🔧 DAX Measures Library
+## DAX Measures Library
 
 Add these measures to your Power BI model:
 
@@ -309,7 +309,7 @@ VAR TreatmentRPU = DIVIDE([Treatment Revenue], [Treatment Users], 0)
 RETURN DIVIDE(TreatmentRPU - ControlRPU, ControlRPU, 0) * 100
 ```
 
-## 📋 Dashboard Checklist
+## Dashboard Checklist
 
 Before publishing, verify:
 

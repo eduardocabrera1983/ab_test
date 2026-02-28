@@ -2,7 +2,7 @@
 # Run this script to execute your Jupyter notebook and create Power BI files
 
 param(
-    [string]$NotebookPath = "ab_test_original.ipynb",
+    [string]$NotebookPath = "ab_test_version_28_02_2026.ipynb",
     [string]$OutputDir = "powerbi_data",
     [switch]$OpenPowerBI
 )

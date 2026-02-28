@@ -61,6 +61,7 @@ Write-Host "3. Import all 5 CSV files from 'powerbi_data' folder" -ForegroundCol
 Write-Host "4. Follow PowerBI_Visualization_Guide.md for dashboard creation" -ForegroundColor White
 
 Write-Host "`n📖 Resources:" -ForegroundColor Cyan
+Write-Host "• Main Notebook: ab_test_version_28_02_2026.ipynb" -ForegroundColor White
 Write-Host "• Template Notebook: ab_test_template.ipynb" -ForegroundColor White
 Write-Host "• Visualization Guide: PowerBI_Visualization_Guide.md" -ForegroundColor White
 Write-Host "• Setup Guide: PowerBI_Setup_Guide.md" -ForegroundColor White

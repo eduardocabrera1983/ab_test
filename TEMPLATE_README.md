@@ -1,226 +1,156 @@
-# 🎯 Complete AB Test Template: Raw Data → Power BI Dashboards
+# A/B Test Framework — Complete Project Guide
 
-## 🎉 What's Ready for You
+## What's Included
 
-A complete end-to-end AB testing template that takes you from raw data collection to professional Power BI dashboards.
+An end-to-end A/B testing system with a universal analysis notebook, Power BI integration, and professional documentation.
 
-### 📁 Files in This Template
+### Files
 
 | File | Purpose |
 |------|---------|
-| `ab_test_template.ipynb` | **Main template** - Complete workflow with sample data |
-| `powerbi_data/` | **5 CSV files** ready for Power BI import |
-| `PowerBI_Visualization_Guide.md` | **Dashboard templates** - Exact steps to create visuals |
-| `PowerBI_Setup_Guide.md` | **Quick setup** - 3-step import process |
-| `setup_template.ps1` | **Automation** - One-click data generation |
+| `ab_test_version_28_02_2026.ipynb` | **Main analysis notebook** — universal framework for binary & continuous metrics |
+| `ab_test_template.ipynb` | Supplementary template — sample data generation & Power BI CSV export |
+| `powerbi_data/` | 5 CSV files ready for Power BI import |
+| `PowerBI_Visualization_Guide.md` | Dashboard templates with exact visual specs |
+| `PowerBI_Setup_Guide.md` | Quick 3-step import process |
+| `run_analysis.ps1` | Automation script for notebook execution |
+| `setup_template.ps1` | One-click sample data generation |
 
-### 🎲 Sample Data Generated
+### Main Notebook Features (ab_test_version_28_02_2026.ipynb)
 
-The template creates realistic e-commerce AB test data:
-- **14 days** of testing
-- **10,000+ users** across Control/Treatment groups
-- **Conversion rates**: Control 11.8%, Treatment 15.3% (+30% improvement)
-- **Multiple segments**: Device, traffic source, weekday patterns
-- **Statistical significance**: p < 0.001 (highly significant!)
+The main notebook is a **universal A/B test framework** that adapts to any experiment:
 
-## 🚀 Quick Start (3 Options)
+- **Binary metrics:** conversion rate, cage rate, click-through rate, bounce rate, etc.
+- **Continuous metrics:** revenue per user, avg documents per shipment, session duration, etc.
 
-### Option 1: Use Sample Data (Fastest)
+| Section | Description |
+|---------|-------------|
+| Experiment Configuration | Single cell to update — everything else runs automatically |
+| Derived Values & Validation | Rates, differences, direction labels |
+| Traffic Allocation Check | Verifies balanced randomization |
+| Statistical Significance | Z-test (binary) or Welch's t-test (continuous) |
+| Confidence Intervals (95%) | Wilson score (binary) or normal (continuous) |
+| Effect Size | Cohen's h (binary) or Cohen's d (continuous) |
+| Power Analysis | Current power, MDE, adequacy assessment |
+| Bayesian Analysis | Posterior distributions, P(benefit), P(harm) |
+| Sample Size Planning | Future test sizing with duration estimates |
+| Visualizations | 4-panel chart (`ab_test_results.png`) |
+| Final Recommendations | Decision framework with actionable next steps |
+| Duration Planner | Standalone pre-experiment calculator |
+
+## Quick Start
+
+### Option 1: Run Your Analysis (Fastest)
+1. Open `ab_test_version_28_02_2026.ipynb`
+2. Update Section 1 with your experiment data
+3. Run all cells — results, charts, and recommendations generated automatically
+
+### Option 2: Generate Sample Data + Power BI Files
 ```powershell
-# Generate sample data and prepare Power BI files
 .\setup_template.ps1 -OpenPowerBI
 ```
 
-### Option 2: Customize with Your Data
+### Option 3: Customize with Your Data
 1. Open `ab_test_template.ipynb`
 2. Replace the data generation section with your real data loading
-3. Run all cells to generate your Power BI files
+3. Run all cells to generate Power BI CSV files
 
-### Option 3: Your Existing Analysis
-1. Use your `ab_test_original.ipynb` for analysis
-2. Copy the Power BI export section from the template
-3. Generate your specific datasets
+## Variables to Update (ab_test_version_28_02_2026.ipynb — Section 1)
 
-## 📊 Power BI Dashboard Templates
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `experiment_id` | Your experiment ID | `"492470"` |
+| `experiment_name` | Short description | `"Item Description Notification"` |
+| `test_duration_days` | Days the test ran | `17` |
+| `metric_type` | `"binary"` or `"continuous"` | `"binary"` |
+| `metric_name` | Label for all charts & output | `"Cage Rate"` |
+| `lower_is_better` | Direction preference | `True` |
+| `control_label` | Control group display name | `"Control (OFF)"` |
+| `treatment_label` | Treatment group display name | `"Treatment (ON)"` |
+
+**Binary data:** `control_users`, `control_conversions`, `test_users`, `test_conversions`
+
+**Continuous data:** `control_n`, `control_mean`, `control_std`, `test_n`, `test_mean`, `test_std`
+
+## Power BI Dashboard Templates
 
 ### Ready-to-Build Dashboards:
 
-#### 🏠 **Page 1: Executive Summary**
+#### Page 1: Executive Summary
 - KPI cards for key metrics
 - Conversion rate comparison chart
 - Statistical significance indicator
 - Business recommendation text
 
-#### 📈 **Page 2: Statistical Analysis**
-- Complete statistical summary table
+#### Page 2: Statistical Analysis
+- Statistical summary table
 - Confidence intervals visualization
 - Effect size gauge
 - Power analysis display
 
-#### 📅 **Page 3: Time Trends**
+#### Page 3: Time Trends
 - Daily conversion rate trends
 - User volume over time
 - Weekday vs weekend patterns
-- Cumulative significance tracking
 
-#### 👥 **Page 4: Segment Analysis**
+#### Page 4: Segment Analysis
 - Device performance breakdown
 - Traffic source analysis
 - Revenue per segment
-- User drill-down capability
 
-### 🎨 Professional Styling
-- Consistent color scheme (Control: Blue, Treatment: Orange)
-- Mobile-responsive design
-- Interactive filters and drill-through
-- Conditional formatting for significance
+### Color Scheme
+- **Control Group**: `#4CAF50` (Green) / `#1f77b4` (Blue)
+- **Treatment Group**: `#f44336` (Red) / `#ff7f0e` (Orange)
+- **Success/Positive**: `#2ca02c` (Green)
+- **Warning/Negative**: `#d62728` (Red)
 
-## 📋 Power BI Import Steps
+## Power BI Import Steps
 
 1. **Open Power BI Desktop**
 2. **Get Data** → **Text/CSV**
 3. **Import these 5 files** from `powerbi_data/`:
-   - `ab_test_summary.csv` - Key metrics
-   - `daily_performance.csv` - Time series
-   - `confidence_intervals.csv` - Statistical data
-   - `segment_analysis.csv` - Breakdowns
-   - `raw_user_sample.csv` - User details
-
+   - `ab_test_summary.csv` — Key metrics
+   - `daily_performance.csv` — Time series
+   - `confidence_intervals.csv` — Statistical data
+   - `segment_analysis.csv` — Breakdowns
+   - `raw_user_sample.csv` — User details
 4. **Create visuals** following `PowerBI_Visualization_Guide.md`
 
-## 🔧 Technical Features
+## Statistical Methods
 
-### Statistical Analysis Included:
-✅ **Sample size calculation**  
-✅ **Two-proportion z-tests**  
-✅ **Confidence intervals**  
-✅ **Effect size (Cohen's h)**  
-✅ **Statistical power analysis**  
-✅ **Bayesian analysis**  
-✅ **Segment breakdown**  
+| Method | Binary | Continuous |
+|--------|--------|-----------|
+| Significance test | Two-proportion z-test | Welch's t-test |
+| Confidence intervals | Wilson score | Normal approximation |
+| Effect size | Cohen's h | Cohen's d |
+| Bayesian model | Beta-binomial conjugate | Normal MC simulation |
+| Power analysis | Exact binomial | Normal approximation |
 
-### Power BI Integration:
-✅ **Pre-built DAX measures**  
-✅ **Conditional formatting**  
-✅ **Interactive filters**  
-✅ **Mobile optimization**  
-✅ **Professional styling**  
+## Real Data Integration
 
-### Data Quality:
-✅ **Realistic patterns** (weekday/weekend, device mix)  
-✅ **Revenue simulation**  
-✅ **User behavior modeling**  
-✅ **Traffic source diversity**  
-
-## 📈 Sample Results
-
-The generated sample data shows:
-
-| Metric | Control | Treatment | Improvement |
-|--------|---------|-----------|-------------|
-| **Users** | 5,063 | 5,068 | - |
-| **Conversions** | 596 | 777 | +30.4% |
-| **Rate** | 11.77% | 15.33% | +3.56pp |
-| **P-value** | 0.000000 | | ✅ Significant |
-| **Power** | 99.9% | | ✅ Adequate |
-
-**🎯 Result: Clear winner with high statistical confidence!**
-
-## 🔄 Real Data Integration
-
-To use your real data instead of sample data:
-
-### Option A: Excel Integration
+### Excel Integration
 ```python
-# In the template notebook, replace data generation with:
+import pandas as pd
 df = pd.read_excel('your_data.xlsx')
-# Map your columns to: user_id, group, converted, revenue, date
+# Extract counts and plug into Section 1 of ab_test_version_28_02_2026.ipynb
 ```
 
-### Option B: Database Connection
+### Database Connection
 ```python
-# Connect to your analytics database
 import sqlalchemy
 df = pd.read_sql(your_ab_test_query, connection)
 ```
 
-### Option C: CSV Import
+### CSV Import
 ```python
-# Load your existing AB test data
 df = pd.read_csv('your_ab_test_data.csv')
 ```
 
-## 🎯 Business Impact
+## Troubleshooting
 
-This template helps you:
-
-### ⚡ **Speed up analysis** 
-- From hours to minutes
-- Automated statistical calculations
-- Ready-made visualizations
-
-### 📊 **Improve decision quality**
-- Comprehensive statistical testing
-- Clear visual communication
-- Stakeholder-ready dashboards
-
-### 🔄 **Standardize process**
-- Consistent methodology
-- Reproducible results
-- Best practices built-in
-
-### 👥 **Enable collaboration**
-- Share interactive dashboards
-- Self-service analytics
-- Mobile accessibility
-
-## 📚 Learning Resources
-
-### Files to Read:
-1. **`PowerBI_Visualization_Guide.md`** - Complete dashboard creation guide
-2. **`PowerBI_Setup_Guide.md`** - Quick setup instructions
-3. **`ab_test_template.ipynb`** - Code examples and methods
-
-### Key Concepts Covered:
-- Statistical significance testing
-- Confidence interval interpretation
-- Effect size measurement
-- Power analysis
-- Bayesian approaches
-- Segment analysis
-- Power BI best practices
-
-## 🔧 Troubleshooting
-
-### Common Issues:
-
-**"CSV files not created"**
-- Check if jupyter is installed: `pip install jupyter`
-- Run: `jupyter nbconvert --execute ab_test_template.ipynb`
-
-**"Power BI can't open files"**
-- Check file paths are correct
-- Ensure CSV files are in `powerbi_data/` folder
-- Try importing one file at a time
-
-**"Numbers don't match"**
-- Verify data import mapping
-- Check for missing values
-- Confirm date ranges
-
-**"Charts look wrong"**
-- Follow exact visual configurations in guide
-- Check data types (numbers vs text)
-- Verify relationships between tables
-
-## 🎉 You're Ready!
-
-This template provides everything needed to create professional AB test dashboards:
-
-✅ **Realistic sample data**  
-✅ **Statistical analysis**  
-✅ **Power BI export**  
-✅ **Dashboard templates**  
-✅ **Step-by-step guides**  
-
-**🚀 Start with the sample data, then customize with your real data!**
+| Issue | Solution |
+|-------|----------|
+| CSV files not created | Run `ab_test_template.ipynb` (the template handles Power BI export) |
+| Power BI can't open files | Check paths; ensure CSVs are in `powerbi_data/` |
+| Numbers don't match | Verify data input in Section 1; re-run all cells |
+| Charts look wrong | Follow visual configurations in `PowerBI_Visualization_Guide.md` |
